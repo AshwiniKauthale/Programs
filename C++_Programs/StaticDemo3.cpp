@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+
+class Demo
+{
+    public:
+    int i;
+    int j;
+    static int x;
+
+    Demo()
+    {
+        this->i = 0;
+        this->j = 0;
+    }
+
+    Demo(int a, int b)
+    {
+        this->i = a;
+        this->j = b;
+    }
+
+    void Fun()
+    {
+        cout<<"Inside Fun\n";
+        cout<<"Value of i is : "<<this->i<<"\n";
+        cout<<"Value of i is : "<<this->i<<"\n";
+    }
+
+    static void Gun()
+    {
+        cout<<"Inside Gun\n";
+        cout<<"Value of x is : "<<x<<"\n";
+        // cout<<i<<"\n";            //Na
+        // cout<<j<<"\n";            //NA
+    }
+
+};
+int Demo :: x = 11;
+
+int main()
+{
+    Demo :: Gun();
+    cout<<"Value of x is : "<<Demo::x<<"\n";
+
+    Demo obj(10,20);
+    obj.Fun();
+
+    obj.Gun();
+
+    cout<<"Size of obj is :"<<sizeof(obj)<<"\n";
+
+    return 0;
+}
